@@ -52,9 +52,7 @@ module.exports = {
             return res.status(401).json({ error: 'Operation not permitted.'})
         }
         
-        await connection('incidents').where('id').delete();
+        await connection('incidents').where('id', id).delete();
         return res.status(204).send();
     }
-
-    //Video 1:18:00
 }
